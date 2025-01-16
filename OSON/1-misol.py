@@ -6,9 +6,9 @@ class Staff:
         self.position = position   
         
     def getter(self):
-        self.fullname = input("Enter name: ")
+        self.fullname = input("Enter  full name: ")
         self.age = input("Enter age: ")
-        self.position = ("Enter position: ")
+        self.position = input("Enter position: ")
 
     def setter(self):
         print("FullName: ")
@@ -58,8 +58,8 @@ while True:
                 print(f"{p2} lavozim topilmadi!")
 
     if choose == 5:
-        system('clear')
         print("Exiting...")
+        break
 
             
     
