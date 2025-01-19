@@ -1,30 +1,33 @@
-class Phone:
-    def __init__(self, name, number) -> None:
-        self._name = name
-        self._number = number
-    
+class Telefon:
+    def __init__(self, name=None, number=None):
+        self.name = name
+        self.number = number
+
     def getter(self):
-        self._name = input("\nEnter your name: ")
-        self._number = input("Enter your phone number : ")
-        
+        self.name = input("\nEnter name: ")
+        self.number = input("Enter phone number: +998")
+
     def setter(self):
-        print ("\nName: \nPhone number: ")
+        print(f"\nName: {self.name}\nPhone Number: +998{self.number}")
 
-phones =  []
+contacts = []
 
-n = 0  
-while n != 3:
-    print("\n1.To add info enter ",
-          "2..To get info enter ",
-          "3.To stop program entr ", sep='\n')
-    
-    n = int(input("Your choice: "))
-    
-    phone = Phone()
-    if n == 1:
-        phone.getter()
-        phones.append(phone)
-        
-    if n == 2:
-        for phone in phones:
-            phone.setter()
+while True:
+    print("\n1. Add contact", "\n2. Show contacts", "\n3. Exit")    
+    choose = input("Quyidagi menyulardan birini tanlang: ")
+
+    if choose == '1':
+        contact = Telefon()
+        contact.getter()
+        contacts.append(contact)
+    elif choose == '2':
+        if contacts:
+            for contact in contacts:
+                contact.setter()
+        else:
+            print("\nKontaktlar ro'yxati bo'sh.")
+    elif choose == '3':
+        print("Exiting...")
+        break
+    else:
+        print("\nNotogri tanlov, qayta urinib ko'ring.")
